@@ -6,7 +6,8 @@ from random_word import RandomWords
 
 # pylint: disable=C0103
 app = Flask(__name__)
-CORS(app, origins=['http://localhost:4200', 'https://randomcodeword.com'])
+CORS(app, origins=['http://localhost:4200',
+     'https://randomcodeword.com', 'https://www.randomcodeword.com'])
 
 
 @app.route('/api/v1/')
