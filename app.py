@@ -1,13 +1,15 @@
 import os
 
 from flask import request, Flask, make_response, jsonify
+from flask_cors import CORS
 from random_word import RandomWords
 
 # pylint: disable=C0103
 app = Flask(__name__)
+CORS(app, origins=['http://localhost:4200', 'https://randomcodeword.com'])
 
 
-@app.route('/get')
+@app.route('/api/v1/')
 def get():
     params = request.args
     r = RandomWords()
